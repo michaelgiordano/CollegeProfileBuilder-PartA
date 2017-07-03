@@ -47,7 +47,7 @@ class MasterViewController: UITableViewController {
             textField.placeholder = "Location"
         }
         alert.addTextField { (textField) in
-            textField.placeholder = "Entrollment"
+            textField.placeholder = "Enrollment"
             textField.keyboardType = UIKeyboardType.numberPad
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
