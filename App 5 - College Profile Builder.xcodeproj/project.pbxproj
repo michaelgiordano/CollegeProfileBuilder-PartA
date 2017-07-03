@@ -15,6 +15,7 @@
 		E975A1231F0ABE8200A7867B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E975A1211F0ABE8200A7867B /* LaunchScreen.storyboard */; };
 		E975A12E1F0ABE8200A7867B /* App_5___College_Profile_BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E975A12D1F0ABE8200A7867B /* App_5___College_Profile_BuilderTests.swift */; };
 		E975A1391F0ABE8200A7867B /* App_5___College_Profile_BuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E975A1381F0ABE8200A7867B /* App_5___College_Profile_BuilderUITests.swift */; };
+		E975A1471F0AC03400A7867B /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = E975A1461F0AC03400A7867B /* College.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E975A1341F0ABE8200A7867B /* App 5 - College Profile BuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App 5 - College Profile BuilderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E975A1381F0ABE8200A7867B /* App_5___College_Profile_BuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App_5___College_Profile_BuilderUITests.swift"; sourceTree = "<group>"; };
 		E975A13A1F0ABE8200A7867B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E975A1461F0AC03400A7867B /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		E975A10A1F0ABE8200A7867B = {
 			isa = PBXGroup;
 			children = (
+				E975A1461F0AC03400A7867B /* College.swift */,
 				E975A1151F0ABE8200A7867B /* App 5 - College Profile Builder */,
 				E975A12C1F0ABE8200A7867B /* App 5 - College Profile BuilderTests */,
 				E975A1371F0ABE8200A7867B /* App 5 - College Profile BuilderUITests */,
@@ -265,6 +268,7 @@
 				E975A11B1F0ABE8200A7867B /* DetailViewController.swift in Sources */,
 				E975A1191F0ABE8200A7867B /* MasterViewController.swift in Sources */,
 				E975A1171F0ABE8200A7867B /* AppDelegate.swift in Sources */,
+				E975A1471F0AC03400A7867B /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
