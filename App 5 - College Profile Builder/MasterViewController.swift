@@ -30,6 +30,7 @@ class MasterViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +57,7 @@ class MasterViewController: UITableViewController {
             let locationTextField = alert.textFields![1] as UITextField
             let enrollmentTextField = alert.textFields![2] as UITextField
             guard let image = UIImage(named: collegeTextField.text!) else{
-                print("missing \(cityTextField.text!) image")
+                print("missing \(collegeTextField.text!) image")
                 return }
             if let enrollment = Int(enrollmentTextField.text!) {
                 let college = College(name: collegeTextField.text!,
@@ -76,7 +77,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let object = objects[indexPath.row] as! College
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -98,8 +99,8 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row] as! College
+        cell.textLabel!.text = object.name
         return cell
     }
 
