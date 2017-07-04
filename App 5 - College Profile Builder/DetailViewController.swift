@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var enrollmentTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var websiteTextField: UITextField!
     
     let realm = try! Realm()
     
@@ -31,6 +32,7 @@ class DetailViewController: UIViewController {
                 college.location = locationTextField.text!
                 college.enrollment = Int(enrollmentTextField.text!)!
                 college.image = UIImagePNGRepresentation(imageView.image!)!
+                college.website = websiteTextField.text!
             })
         }
     }
@@ -54,6 +56,14 @@ class DetailViewController: UIViewController {
                 locationTextField.text = college.location
                 enrollmentTextField.text = String(college.enrollment)
                 imageView.image = UIImage(data: college.image)
+                websiteTextField.text = college.website
+            }
+        }
+    }
+    @IBAction func openInSafariWithGoButton(_ sender: Any) {
+        if let college = self.detailItem {
+            if let url = URL(string: college.website) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }
