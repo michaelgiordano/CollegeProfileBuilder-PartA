@@ -9,7 +9,8 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
     @IBOutlet weak var collegeTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var enrollmentTextField: UITextField!
@@ -17,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var websiteTextField: UITextField!
     
     let realm = try! Realm()
+    let imagePicker = UIImagePickerController()
     
     var detailItem: College? {
         didSet {
@@ -42,11 +44,6 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func configureView() {
         //Update the user interface for the detail item
@@ -60,12 +57,18 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func openInSafariWithGoButton(_ sender: Any) {
         if let college = self.detailItem {
             if let url = URL(string: college.website) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
+    }
+    
+    @IBAction func onLibraryButtonTapped(_ sender: Any) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
 }
 
