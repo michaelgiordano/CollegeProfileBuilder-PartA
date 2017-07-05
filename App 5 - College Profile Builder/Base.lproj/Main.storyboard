@@ -37,6 +37,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i1r-Wp-o7k">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.70176382459999997" green="1" blue="0.63691346230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2F-xL-f1Y">
                                 <rect key="frame" x="112" y="76" width="150" height="30"/>
                                 <constraints>
@@ -134,12 +138,15 @@
                             <constraint firstItem="7oq-4Z-kyT" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-160.5" id="6bS-kb-cJo"/>
                             <constraint firstItem="gdm-Gf-K78" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="106.5" id="G5e-pK-Vqo"/>
                             <constraint firstItem="fLI-du-YoR" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" constant="152" id="J6x-Z3-ZPJ"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="i1r-Wp-o7k" secondAttribute="bottom" id="K9m-0Z-35c"/>
+                            <constraint firstItem="i1r-Wp-o7k" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="Lng-ZU-cL0"/>
                             <constraint firstItem="kvL-Wc-FNP" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" constant="102" id="NFS-uT-oA4"/>
                             <constraint firstItem="Trb-MN-F2r" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="77.5" id="ORh-rd-t43"/>
                             <constraint firstItem="iAH-Re-cY3" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-19.5" id="Srh-Yt-XRY"/>
                             <constraint firstItem="Trb-MN-F2r" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="VAO-KT-CoS"/>
                             <constraint firstItem="iAH-Re-cY3" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="bbJ-e9-vGD"/>
                             <constraint firstItem="7oq-4Z-kyT" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="bho-JK-mgW"/>
+                            <constraint firstAttribute="trailing" secondItem="i1r-Wp-o7k" secondAttribute="trailing" id="bqm-6R-GeX"/>
                             <constraint firstItem="vXm-dL-hoi" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-201.5" id="cWL-Ye-1ir"/>
                             <constraint firstItem="5c1-qj-gjh" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-120.5" id="fVe-vq-ACX"/>
                             <constraint firstItem="fLI-du-YoR" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-120.5" id="lP8-W4-5Qc"/>
@@ -148,11 +155,12 @@
                             <constraint firstItem="gdm-Gf-K78" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="s8L-ax-ZUb"/>
                             <constraint firstItem="5c1-qj-gjh" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="tjd-SV-DXG"/>
                             <constraint firstItem="kvL-Wc-FNP" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-201.5" id="u30-78-bml"/>
+                            <constraint firstItem="i1r-Wp-o7k" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="xqY-Kj-F68"/>
                             <constraint firstItem="vXm-dL-hoi" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="z75-J6-1RX"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Details" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="collegeTextField" destination="L2F-xL-f1Y" id="lM1-Td-tbI"/>
                         <outlet property="enrollmentTextField" destination="7oq-4Z-kyT" id="Vg8-9r-apE"/>
@@ -255,11 +263,11 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Colleges" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="708" y="-630.13493253373315"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

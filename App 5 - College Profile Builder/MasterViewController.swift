@@ -45,12 +45,6 @@ class MasterViewController: UITableViewController
         tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func insertNewObject(_ sender: Any)
     {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .alert)
@@ -74,15 +68,21 @@ class MasterViewController: UITableViewController
             let locationTextField = alert.textFields![1] as UITextField
             let enrollmentTextField = alert.textFields![2] as UITextField
             let websiteTextField = alert.textFields![3] as UITextField
-            guard let image = UIImage(named: collegeTextField.text!) else{
-                let image = UIImage(named: "default")
-                return }
+            var theImage = UIImage()
+            if UIImage(named: collegeTextField.text!) != nil
+            {
+                theImage = UIImage(named: collegeTextField.text!)!
+            }
+            else
+            {
+                theImage = UIImage(named: "default")!
+            }
             if let enrollment = Int(enrollmentTextField.text!)
             {
                 let college = College(name: collegeTextField.text!,
                                       location: locationTextField.text!,
                                       enrollment: enrollment,
-                                      image: UIImagePNGRepresentation(image)!,
+                                      image: UIImagePNGRepresentation(theImage)!,
                                       website: websiteTextField.text!)
                 self.objects.append(college)
                 try! self.realm.write {
@@ -151,6 +151,17 @@ class MasterViewController: UITableViewController
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        if indexPath.row%2 == 1
+        {
+            cell.backgroundColor = UIColor.init(red: 0.5137, green: 0.6941, blue: 1, alpha: 0.5)
+        }
+        else{
+            cell.backgroundColor = UIColor.white
         }
     }
 }
