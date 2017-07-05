@@ -9,7 +9,8 @@
 import UIKit
 import RealmSwift
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController
+{
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
@@ -18,34 +19,40 @@ class MasterViewController: UITableViewController {
         self.realm.objects(College.self)
     }()
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
-        if let split = splitViewController {
+        if let split = splitViewController
+        {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        for college in colleges {
+        for college in colleges
+        {
             objects.append(college)
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(_ sender: Any) {
+    func insertNewObject(_ sender: Any)
+    {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "College"
@@ -70,7 +77,8 @@ class MasterViewController: UITableViewController {
             guard let image = UIImage(named: collegeTextField.text!) else{
                 let image = UIImage(named: "default")
                 return }
-            if let enrollment = Int(enrollmentTextField.text!) {
+            if let enrollment = Int(enrollmentTextField.text!)
+            {
                 let college = College(name: collegeTextField.text!,
                                       location: locationTextField.text!,
                                       enrollment: enrollment,
@@ -89,9 +97,12 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Segues
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "showDetail"
+        {
+            if let indexPath = tableView.indexPathForSelectedRow
+            {
                 let object = objects[indexPath.row] as! College
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
@@ -103,15 +114,18 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Table View
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return objects.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         let object = objects[indexPath.row] as! College
@@ -119,15 +133,19 @@ class MasterViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete
+        {
             let college = objects.remove(at: indexPath.row) as! College
-            try! self.realm.write {
+            try! self.realm.write
+            {
                 self.realm.delete(college)
             }
             tableView.deleteRows(at: [indexPath], with: .fade)

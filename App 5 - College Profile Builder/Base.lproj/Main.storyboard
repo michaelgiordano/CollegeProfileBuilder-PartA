@@ -192,7 +192,7 @@
                     <navigationItem key="navigationItem" id="Ixm-UL-dtV">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Bm8-OP-0x0">
                             <connections>
-                                <action selector="searchBarSearchButtonClicked:" destination="Xh4-ew-25o" id="44S-tG-Zlc"/>
+                                <action selector="showSearchBar:" destination="Xh4-ew-25o" id="gts-v8-iCQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

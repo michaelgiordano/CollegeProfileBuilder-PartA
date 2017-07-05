@@ -21,12 +21,11 @@ class MapViewController: UIViewController, UISearchBarDelegate
         findLocation(location: location)
     }
     
-//    @IBAction func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
-//    {
-//        dismiss(animated: true, completion: nil)
-//        findLocation(location: searchBar.text!)
-//    }
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        dismiss(animated: true, completion: nil)
+        findLocation(location: searchBar.text!)
+    }
     
     func findLocation(location: String)
     {

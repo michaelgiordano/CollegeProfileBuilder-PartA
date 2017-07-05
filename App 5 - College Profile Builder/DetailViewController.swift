@@ -21,15 +21,19 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     let realm = try! Realm()
     let imagePicker = UIImagePickerController()
     
-    var detailItem: College? {
-        didSet {
+    var detailItem: College?
+    {
+        didSet
+        {
             // Update the view.
             configureView()
         }
     }
     
-    @IBAction func onTappedSaveButton(_ sender: Any) {
-        if let college = self.detailItem {
+    @IBAction func onTappedSaveButton(_ sender: Any)
+    {
+        if let college = self.detailItem
+        {
             try! realm.write({
                 college.name = collegeTextField.text!
                 college.location = locationTextField.text!
@@ -40,16 +44,20 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
     }
     
-    func configureView() {
+    func configureView()
+    {
         //Update the user interface for the detail item
-        if let college = self.detailItem {
-            if collegeTextField != nil {
+        if let college = self.detailItem
+        {
+            if collegeTextField != nil
+            {
                 collegeTextField.text = college.name
                 locationTextField.text = college.location
                 enrollmentTextField.text = String(college.enrollment)
@@ -59,17 +67,26 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
-    @IBAction func openInSafariWithGoButton(_ sender: Any) {
+    @IBAction func openInSafariWithGoButton(_ sender: Any)
+    {
         if let college = self.detailItem {
-            if let url = URL(string: college.website) {
+            if let url = URL(string: college.website)
+            {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }
     
-    @IBAction func onLibraryButtonTapped(_ sender: Any) {
+    @IBAction func onLibraryButtonTapped(_ sender: Any)
+    {
         imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let dvc = segue.destination as! MapViewController
+        dvc.location = collegeTextField.text!
     }
 }
 
