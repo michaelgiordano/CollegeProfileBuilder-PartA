@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This apps requires access to the photo library</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires use of your location</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

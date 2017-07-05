@@ -20,6 +20,7 @@
 		E975A14B1F0ACC5900A7867B /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E975A1481F0ACC5900A7867B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E975A14C1F0ACC5900A7867B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E975A1491F0ACC5900A7867B /* RealmSwift.framework */; };
 		E975A14D1F0ACC5900A7867B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E975A1491F0ACC5900A7867B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E978ED9F1F0D6044004CBAC1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978ED9E1F0D6044004CBAC1 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		E975A1461F0AC03400A7867B /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = College.swift; path = ../College.swift; sourceTree = "<group>"; };
 		E975A1481F0ACC5900A7867B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		E975A1491F0ACC5900A7867B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		E978ED9E1F0D6044004CBAC1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +128,12 @@
 		E975A1151F0ABE8200A7867B /* App 5 - College Profile Builder */ = {
 			isa = PBXGroup;
 			children = (
-				E975A1461F0AC03400A7867B /* College.swift */,
 				E975A1161F0ABE8200A7867B /* AppDelegate.swift */,
+				E975A11C1F0ABE8200A7867B /* Main.storyboard */,
+				E975A1461F0AC03400A7867B /* College.swift */,
 				E975A1181F0ABE8200A7867B /* MasterViewController.swift */,
 				E975A11A1F0ABE8200A7867B /* DetailViewController.swift */,
-				E975A11C1F0ABE8200A7867B /* Main.storyboard */,
+				E978ED9E1F0D6044004CBAC1 /* MapViewController.swift */,
 				E975A11F1F0ABE8200A7867B /* Assets.xcassets */,
 				E975A1211F0ABE8200A7867B /* LaunchScreen.storyboard */,
 				E975A1241F0ABE8200A7867B /* Info.plist */,
@@ -294,6 +297,7 @@
 				E975A11B1F0ABE8200A7867B /* DetailViewController.swift in Sources */,
 				E975A1191F0ABE8200A7867B /* MasterViewController.swift in Sources */,
 				E975A1171F0ABE8200A7867B /* AppDelegate.swift in Sources */,
+				E978ED9F1F0D6044004CBAC1 /* MapViewController.swift in Sources */,
 				E975A1471F0AC03400A7867B /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

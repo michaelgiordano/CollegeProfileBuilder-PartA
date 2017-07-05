@@ -117,12 +117,24 @@
                                     <action selector="onLibraryButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="lxr-av-2Qm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvL-Wc-FNP">
+                                <rect key="frame" x="270" y="117" width="39" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SJg-zL-xTF"/>
+                                    <constraint firstAttribute="width" constant="39" id="rtu-I8-USb"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <segue destination="Xh4-ew-25o" kind="show" id="7hj-lm-yB7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7oq-4Z-kyT" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-160.5" id="6bS-kb-cJo"/>
                             <constraint firstItem="gdm-Gf-K78" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="106.5" id="G5e-pK-Vqo"/>
                             <constraint firstItem="fLI-du-YoR" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" constant="152" id="J6x-Z3-ZPJ"/>
+                            <constraint firstItem="kvL-Wc-FNP" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" constant="102" id="NFS-uT-oA4"/>
                             <constraint firstItem="Trb-MN-F2r" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="77.5" id="ORh-rd-t43"/>
                             <constraint firstItem="iAH-Re-cY3" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-19.5" id="Srh-Yt-XRY"/>
                             <constraint firstItem="Trb-MN-F2r" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="VAO-KT-CoS"/>
@@ -135,6 +147,7 @@
                             <constraint firstItem="L2F-xL-f1Y" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-242.5" id="oJh-rq-XwW"/>
                             <constraint firstItem="gdm-Gf-K78" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="s8L-ax-ZUb"/>
                             <constraint firstItem="5c1-qj-gjh" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="tjd-SV-DXG"/>
+                            <constraint firstItem="kvL-Wc-FNP" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" constant="-201.5" id="u30-78-bml"/>
                             <constraint firstItem="vXm-dL-hoi" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="z75-J6-1RX"/>
                         </constraints>
                     </view>
@@ -151,6 +164,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="128.18590704647679"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="JLw-WD-5J0">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xh4-ew-25o" customClass="MapViewController" customModule="App_5___College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wox-Xc-7dJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="mHb-Mq-kef"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TOJ-mQ-fdI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Qig-mj-8ee">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qig-mj-8ee" firstAttribute="leading" secondItem="TOJ-mQ-fdI" secondAttribute="leading" id="AiN-io-pxC"/>
+                            <constraint firstItem="Qig-mj-8ee" firstAttribute="top" secondItem="Wox-Xc-7dJ" secondAttribute="bottom" id="dEY-Ke-QeP"/>
+                            <constraint firstAttribute="trailing" secondItem="Qig-mj-8ee" secondAttribute="trailing" id="our-hJ-9zz"/>
+                            <constraint firstItem="mHb-Mq-kef" firstAttribute="top" secondItem="Qig-mj-8ee" secondAttribute="bottom" id="sga-b9-Aal"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ixm-UL-dtV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Bm8-OP-0x0">
+                            <connections>
+                                <action selector="searchBarSearchButtonClicked:" destination="Xh4-ew-25o" id="44S-tG-Zlc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Qig-mj-8ee" id="HMa-RE-Fee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUU-fs-4RL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560.8" y="109.29535232383809"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
