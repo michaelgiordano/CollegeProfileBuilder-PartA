@@ -156,12 +156,12 @@ class MasterViewController: UITableViewController
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        if indexPath.row%2 == 1
+        if indexPath.row%2 == 0
         {
-            cell.backgroundColor = UIColor.init(red: 0.5137, green: 0.6941, blue: 1, alpha: 0.5)
-        }
-        else{
-            cell.backgroundColor = UIColor.white
+            cell.backgroundColor = UIColor.init(red: 0.5137, green: 0.6941, blue: 1, alpha: 0.5)        }
+        else
+        {
+            cell.backgroundColor = UIColor.init(red: 0.5137, green: 0.6941, blue: 1, alpha: 0.2)
         }
     }
 }
